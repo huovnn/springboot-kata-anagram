@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>Anagram Finder</title>
+        <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    </head>
+    <body>
+   
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="jumbotron">
+                        <form action="#" th:action="@{/anagrams}" th:object="${anagram}" method="POST">
+                            <div class="form-group">
+                                <label for="word-input">Enter a word</label>
+                                <input th:field="*{word}" type="text" class="form-control" id="word-input" placeholder="documenting"> </input>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="radio-buttons">Word combinations</label>
+                                <div id="radio-buttons">
+                                    <label class="radio-inline">
+                                        <input th:field="*{combination}" type="radio" name="radio1" id="inlineRadio1" value="1"> 1 </input>
+                                    </label>
+                                    <label class="radio-inline">
+                                        
+                                        <input th:field="*{combination}" type="radio" name="radio2" id="inlineRadio2" value="2"> 2 </input>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>
