@@ -28,15 +28,11 @@ public class AnagramController {
         model.addAttribute("anagram", new AnagramModel());
         AnagramHelper anagram = new AnagramHelper(new FileHelper());
         
-
-        
-
         return "index";
     }
 
     @RequestMapping(value = "/anagrams", method = RequestMethod.POST)
     public String anagramSubmit(@ModelAttribute AnagramModel anagram, Model model) {
-        
         String baseCase = anagram.getWord();
         int combinations = anagram.getCombination();
         anagram.setAnagrams(anagramHelper.findAnagrams(baseCase, combinations));

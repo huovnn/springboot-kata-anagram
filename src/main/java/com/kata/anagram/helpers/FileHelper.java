@@ -19,9 +19,7 @@ public class FileHelper {
     public List<String> getLines() {
        List<String> lines = new ArrayList<String>();
        
-       try {
-          
-           
+       try {    
            BufferedReader reader = new BufferedReader(new java.io.FileReader("exp-words.txt"));
            
            String line = null;
